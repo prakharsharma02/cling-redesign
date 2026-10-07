@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cling Info Tech | Websites, apps and ERPs built from scratch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f4f6f8;--surface:#fff;--ink:#0d1b2e;--mute:#53627a;--line:#d9e0ea;--blue:#1b4fd8;--sun:#f2a516;--onblue:#fff;
+--hd:"Bricolage Grotesque","Trebuchet MS",sans-serif;--bd:"Public Sans",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#09121f;--surface:#101d30;--ink:#eef2f8;--mute:#9aabc4;--line:#22344f;--blue:#6f97ff;--onblue:#09121f}}
+:root[data-theme="dark"]{--bg:#09121f;--surface:#101d30;--ink:#eef2f8;--mute:#9aabc4;--line:#22344f;--blue:#6f97ff;--onblue:#09121f}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--bd)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--hd);line-height:1.05;margin:0;letter-spacing:-.02em}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:800 22px var(--hd);text-decoration:none}
+.logo i{display:inline-block;width:12px;height:12px;background:var(--sun);border-radius:50%;margin-left:3px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
+nav ul a{text-decoration:none;color:var(--mute)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--blue);color:var(--onblue);font:600 16px var(--bd);padding:13px 22px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{padding:88px 0 72px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(46px,7vw,88px);font-weight:800}
+.hero p{font-size:20px;color:var(--mute);max-width:34em;margin:26px 0 34px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.board{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:22px;box-shadow:8px 8px 0 var(--sun)}
+.board h3{font-size:19px;margin-bottom:4px}
+.board small{color:var(--mute);font-size:14px}
+.stage{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.stage:first-of-type{margin-top:16px}
+.stage b{font-weight:600}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--blue);border-radius:4px;width:0;animation:fill 1.4s .3s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes fill{to{width:var(--w)}}
+@media (prefers-reduced-motion:reduce){.bar span{animation:none;width:var(--w)}}
+.facts{background:var(--ink);color:var(--bg)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:36px;padding-bottom:36px}
+.facts b{display:block;font:800 clamp(34px,5vw,52px)/1 var(--hd)}
+.facts span{font-size:15px;opacity:.75}
+section{padding:96px 0}
+.head{max-width:640px;margin-bottom:48px}
+.head h2{font-size:clamp(34px,4.5vw,52px);font-weight:700}
+.head p{color:var(--mute);margin:16px 0 0}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--surface)}
+.svc div{padding:30px;border-right:1px solid var(--line)}
+.svc div:last-child{border-right:0}
+.svc h3{font-size:26px;margin-bottom:12px}
+.svc p{margin:0;color:var(--mute);font-size:16px}
+.more{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.more span{border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:99px;font-size:15px}
+.focus{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.two a{display:block;text-decoration:none;border:1.5px solid var(--ink);border-radius:14px;padding:30px;background:var(--bg);transition:transform .2s}
+.two a:hover{transform:translateY(-4px)}
+.two h3{font-size:28px;margin-bottom:10px}
+.two p{margin:0;color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--line)}
+.steps div{position:relative;padding-right:24px}
+.steps div::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:#0d1b2e;font:700 18px var(--hd);position:relative}
+.steps h3{font-size:22px;margin:18px 0 8px}
+.steps p{margin:0;color:var(--mute);font-size:15px}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.people div{border-top:3px solid var(--blue);padding-top:14px}
+.people b{font:700 21px var(--hd);display:block}
+.people span{color:var(--mute);font-size:15px}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.offices{display:grid;gap:18px;margin-top:28px;font-size:15px;color:var(--mute)}
+.offices b{color:var(--ink);display:block;font-size:16px}
+form{display:grid;gap:14px;background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:28px}
+form .r{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:120px;resize:vertical}
+#ok{color:var(--blue);font-weight:600;min-height:1.4em;margin:0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){
+nav ul{display:none}
+.hero,.contact,.two{grid-template-columns:1fr}
+.hero{padding-top:48px}
+.facts .wrap,.people{grid-template-columns:1fr 1fr}
+.svc,.steps{grid-template-columns:1fr}
+.svc div{border-right:0;border-bottom:1px solid var(--line)}
+.steps::before{display:none}.steps div{margin-bottom:28px}
+section{padding:64px 0}form .r{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">cling<i></i></a>
+<ul><li><a href="#services">Services</a></li><li><a href="#focus">AI and 3D</a></li><li><a href="#process">How we work</a></li><li><a href="#team">Team</a></li></ul>
+<a class="btn" href="#contact">Start a project</a>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Tell us the idea. We'll ship the product.</h1>
+<p>Cling Info Tech designs and builds websites, mobile apps and ERPs from the ground up, with no templates, for businesses across India and Africa.</p>
+<div class="cta"><a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#services">See what we build</a></div>
+</div>
+<aside class="board" aria-label="Example project progress">
+<h3>Your project, week by week</h3><small>Every client sees progress like this.</small>
+<div class="stage"><b>Plan</b><div class="bar"><span style="--w:100%"></span></div></div>
+<div class="stage"><b>Design</b><div class="bar"><span style="--w:100%"></span></div></div>
+<div class="stage"><b>Build</b><div class="bar"><span style="--w:68%"></span></div></div>
+<div class="stage"><b>Launch</b><div class="bar"><span style="--w:20%"></span></div></div>
+</aside>
+</div>
+
+<div class="facts"><div class="wrap">
+<div><b>350+</b><span>clients served</span></div>
+<div><b>390+</b><span>projects delivered</span></div>
+<div><b>4</b><span>offices: Noida, Pune, Moradabad, Conakry</span></div>
+<div><b>2019</b><span>year we started</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="head"><h2>What we build</h2><p>Every layout and every line of code is written for your business. We never reskin a pre-made template.</p></div>
+<div class="svc">
+<div><h3>Websites</h3><p>Custom designs developed from scratch to your standards, fast on every device.</p></div>
+<div><h3>Mobile apps</h3><p>Custom apps for the fastest-growing way your customers reach you.</p></div>
+<div><h3>ERPs</h3><p>One system that connects your back-office and front-office work.</p></div>
+</div>
+<div class="more"><span>Custom web portals</span><span>Digital marketing</span><span>Social media marketing</span><span>Dedicated IT team for your startup</span><span>Payment gateway integration</span></div>
+</div></section>
+
+<section id="focus" class="focus"><div class="wrap">
+<div class="head"><h2>What we're working on now</h2><p>Beyond web and apps, our team builds with AI and 3D.</p></div>
+<div class="two">
+<a href="https://clinginfotech.com/ai"><h3>AI and machine learning</h3><p>Including a surveillance model that spots suspicious activity in video.</p></a>
+<a href="https://clinginfotech.com/video3d"><h3>3D animation</h3><p>Logo animations and advertisement videos for brands.</p></a>
+</div>
+</div></section>
+
+<section id="process"><div class="wrap">
+<div class="head"><h2>How a project runs</h2><p>Four steps, with a named contact at each one.</p></div>
+<div class="steps">
+<div><h3>Talk</h3><p>We learn your goals, users and deadline.</p></div>
+<div><h3>Design</h3><p>You review layouts before any code is written.</p></div>
+<div><h3>Build</h3><p>Regular demos so nothing surprises you.</p></div>
+<div><h3>Launch and support</h3><p>We go live with you and stay on after.</p></div>
+</div>
+</div></section>
+
+<section id="team" class="focus"><div class="wrap">
+<div class="head"><h2>Leadership</h2></div>
+<div class="people">
+<div><b>Akshay Gupta</b><span>CEO</span></div>
+<div><b>Ashi Gupta</b><span>Managing Director</span></div>
+<div><b>Ramesh Singh</b><span>Co-founder and Director</span></div>
+<div><b>Numukeh Tunkara</b><span>Director</span></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+<div>
+<div class="head" style="margin-bottom:0"><h2>Start a project</h2><p>Send a short note. We reply with next steps.</p></div>
+<div class="offices">
+<div><b>Noida (head office)</b>130-132, 2nd Floor, Wave Galleria, Wave City, NH-24, Uttar Pradesh 201015</div>
+<div><b>Pune</b>2nd Floor, Raj Square, Pashan-Sus Rd, Maharashtra 411021</div>
+<div><b>Moradabad</b>2/652, Avas Vikas, Buddhi Vihar, UP 244001</div>
+<div><b>Conakry, Guinea</b>Lanbandji, Commune de Lanbandji</div>
+<div><b>Call or email</b><a href="tel:+918264469132">+91 8264469132</a> · <a href="mailto:info@clinginfotech.com">info@clinginfotech.com</a></div>
+</div>
+</div>
+<form id="f">
+<div class="r"><label>Full name<input name="n" required></label><label>Email<input type="email" name="e" required></label></div>
+<div class="r"><label>Phone<input type="tel" name="p"></label><label>Company<input name="c"></label></div>
+<label>What do you want to build?<textarea name="m" required></textarea></label>
+<button class="btn" type="submit">Send message</button>
+<p id="ok" role="status"></p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© Cling Info Tech Works Private Limited</span><span><a href="https://clinginfotech.com/privacy">Privacy</a> · <a href="https://clinginfotech.com/terms-and-condition">Terms</a> · <a href="https://clinginfotech.com/refund-policy">Refunds</a></span></div></footer>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').textContent='Message ready. Connect this form to your backend to receive it.';});
+</script>
+</body>
+</html>
